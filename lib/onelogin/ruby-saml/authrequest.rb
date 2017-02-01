@@ -150,6 +150,11 @@ module OneLogin
               decl_ref.text = authn_context_decl_ref
             end
           end
+
+          scoping = requested_context.add_element "samlp:Scoping", { "ProxyCount" => "1" }
+          idplist = scoping.add_element "samlp:IDPList"
+          idpentry = idplist.add_element "samlp:IDPEntry", { "ProviderID" => "ONEMEDICAL.ONELOGIN.COM" }
+
         end
 
         request_doc
