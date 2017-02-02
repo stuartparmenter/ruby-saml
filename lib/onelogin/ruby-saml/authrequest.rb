@@ -151,7 +151,7 @@ module OneLogin
             end
           end
 
-          scoping = requested_context.add_element "samlp:Scoping", { "ProxyCount" => "1" }
+          scoping = root.add_element "samlp:Scoping", { "ProxyCount" => "1" }
           idplist = scoping.add_element "samlp:IDPList"
           idpentry = idplist.add_element "samlp:IDPEntry", { "ProviderID" => "ONEMEDICAL.ONELOGIN.COM" }
 
